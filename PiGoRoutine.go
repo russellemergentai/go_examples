@@ -28,6 +28,7 @@ func calculate(ch chan float64) {
 func main() {
 	ch1 := make(chan float64)
 	go calculate(ch1)
+// Blocks until data available 
 	val := <-ch1
 	fmt.Println(val)
 }
