@@ -1,0 +1,36 @@
+package main
+
+import (
+	"errors"
+	"fmt"
+)
+
+var ERR = errors.New("mismatch")
+
+func arrayMultiply(a []int, b []int) ([]int, error) {
+	n, m := len(a), len(b)
+
+	if m != n {
+		return nil, ERR
+	}
+
+	result := make([]int, n)
+
+	for i := 0; i < n; i++ {
+		result[i] = a[i] * b[i]
+	}
+
+	return result, nil
+}
+
+func main() {
+	a := []int{1, 2, 3}
+	b := []int{1, 2, 3}
+	res, err := arrayMultiply(a, b)
+
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	fmt.Println(res)
+}
