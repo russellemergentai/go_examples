@@ -1,2 +1,2 @@
 # go_examples
-Store some example code
+collection of core golang code examples for future reference
